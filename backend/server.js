@@ -16,7 +16,6 @@ mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, u
     .then(() => console.log("Database Connected Successfully"))
     .catch(err => console.log(err));
 
-mongoose.connect('mongodb://127.0.0.1:27017/todos', { useNewUrlParser: true });
 
 connection.once('open', function() {
     console.log("MongoDB database connection established successfully");
