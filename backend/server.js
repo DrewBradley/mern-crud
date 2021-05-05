@@ -11,8 +11,12 @@ let Todo = require('./todo.model');
 app.use(cors());
 app.use(bodyParser.json());
 
+const connection = "mongodb+srv://CaroleKing:Hiwxw43E#HGvZtk@cluster0.qlrqi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority;
+mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+    .then(() => console.log("Database Connected Successfully"))
+    .catch(err => console.log(err));
+
 mongoose.connect('mongodb://127.0.0.1:27017/todos', { useNewUrlParser: true });
-const connection = mongoose.connection;
 
 connection.once('open', function() {
     console.log("MongoDB database connection established successfully");
